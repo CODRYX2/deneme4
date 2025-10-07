@@ -1,0 +1,109 @@
+I. TASARIM DİLİ VE KULLANICI DENEYİMİ (UI/UX)
+Uygulamanın genel görünümü, sarı ve siyahın hakim olduğu koyu (Dark Mode) bir tema üzerine inşa edilecektir.
+
+A. Glassmorphism ve Tema
+Arka Plan: Koyu (neredeyse siyah) zemin üzerine, zarif, düşük kontrastlı koyu desen veya degrade kullanılacaktır.
+
+Kartlar/Paneller: Tüm içerik kutuları (Profil Kartı, Sohbet Balonu, Etkinlik Kartları) %10-20 opaklıkta yarı saydam olmalı, arkasındaki arka planı hafifçe bulanıklaştırmalıdır (backdrop-filter: blur). Bu yapıya hafif bir gölge ve Neon Sarı renkte ince bir kenarlık eşlik etmelidir.
+
+Butonlar (Primer): Neon Sarı dolgu yerine, başlangıçta yarı saydam sarı olmalıdır. Tıklandığında veya üzerine gelindiğinde anlık olarak tam opak neon sarıya geçerek geri bildirim vermelidir.
+
+Tipografi: Başlıklar ve önemli bilgiler için Neon Sarı ve Parlak Beyaz; ikincil metinler ve açıklamalar için Açık Gri tonları kullanılacaktır. Modern ve keskin hatlı bir Sans-Serif font seçilmelidir.
+
+B. Navigasyon Mimarisi (Tab Bar ve Menu Hub)
+1. Alt Navigasyon Çubuğu (Tab Bar): Uygulamanın en altında kalıcı 5 ana sekme bulunmalıdır.
+
+Sıra	Sekme Adı	İkon	Başlangıç Ekranı / İçerik	Geliştirme Notu
+1	MAP (HARİTA)	Harita Simgesi	Uygulamanın Açılış Ekranı. Çevredekileri, araçları ve etkinlikleri gösterir.	
+2	CHATS (SOHBETLER)	Mesaj Balonu	Tüm mesajlaşma ve grup sohbetleri.	
+3	MENU	Uygulama Logosu	Merkezi Gezinme Hub'ı. İkincil işlevlerin (Grid) bulunduğu ekrana geçiş.	Merkezde ve Vurgulu olmalıdır.
+4	MOMENTS	Ateş/Snapchat Simgesi	Anlık fotoğraf/video paylaşımları akışı.	
+5	PROFILE (PROFİL)	Kullanıcı Simgesi	Kişisel kullanıcı profiline direkt geçiş.	
+
+E-Tablolar'a aktar
+2. Ana Menü Ekranı (MENU Hub): MENU simgesine tıklandığında açılan, aşağıdaki işlevleri içeren grid menü olmalıdır: SCAN, SUPPORT, VEHICLES (Liderlik Tablosu), ALERT (Bildirim Geçmişi), TOURS, FRIENDS, CREWS, DRIVE, SEARCH.
+
+II. MODÜL VE İŞLEVSELLİK DETAYLARI
+A. Kullanıcı Profili (PROFILE)
+Profil Kartı Akışı: Ana kart, kullanıcının kaydırma veya dokunma hareketiyle ön ve arka yüzü arasında sorunsuz geçiş yapabilmelidir.
+
+Ön Yüz: Profil Fotoğrafı, Kullanıcı Adı, Birincil Araç (Garajdan seçilen) bilgisi.
+
+Arka Yüz: Sosyal Medya Bağlantıları ve Biyografi.
+
+Profil Düzenleme: Eksiksiz bir düzenleme akışı (Ad/Soyad, @username, Konum, Biyografi) bulunmalıdır.
+
+Sosyal Medya Bağlantıları (Çok Kritik): Kullanıcı birden fazla dış bağlantı (Instagram, YouTube, TikTok) ekleyebilmelidir. Her bir ekli bağlantının yanında, çalışır durumda "Düzenle" (link ve kullanıcı adı güncelleme) ve "Sil" butonları bulunmalıdır. Silme işlemi anında ve kalıcı olarak gerçekleşmelidir.
+
+Ek Vurgular:
+
+Crew Plakası: Ekibin adını ve yılını gösteren özelleştirilebilir 3D plaka görseli. Tıklanınca ilgili Crew detaylarına gitmelidir.
+
+GARAJ GÖRÜNTÜLE butonu ve kazanılan başarımları gösteren ETİKETLER (STICKERS) bölümü.
+
+Hızlı Akış: Profilden direkt olarak kullanıcının "Moments" paylaşımlarına ve katıldığı/oluşturduğu "Events" listesine hızlı geçiş butonları/sekmeleri eklenmelidir.
+
+B. Garaj (GARAGE) ve Araç Yönetimi
+My Garage Listesi: Kullanıcının tüm araçlarının listesi bulunmalıdır. "ARAÇ EKLE +" butonu araç ekleme akışını başlatır.
+
+Araç Ekleme Akışı (5 Adım):
+
+Marka, Model ve Yıl (Zorunlu).
+
+Plaka bilgisi (Ruhsat bilgileri opsiyonel/gizli).
+
+Fotoğraf Yükleme (Ön, arka, iç mekan, en az 1 zorunlu).
+
+Teknik/Modifikasyon Detayları (HP, Tork, Modifikasyon Listesi).
+
+Araç Sosyal Bilgisi (Araca özel Instagram hesabı veya hashtag).
+
+3D Plaka Render Motoru (En Kritik Özellik):
+
+Kullanıcının girdiği plaka metni, gerçekçi, 3D kabartmalı ve hafif yansımalı/krom efekti içeren bir görsel nesneye dönüştürülmelidir.
+
+Türkiye (TR), Almanya (DE) ve ABD (US) gibi farklı ülke plaka şablonları sunulmalıdır.
+
+Araç Detay Ekranı: Aracın tüm fotoğraflarının (kaydırılabilir galeri), teknik özelliklerinin, sosyal bağlantılarının ve o araçla yapılan MOMENTS paylaşımlarının listelendiği kapsamlı bir ekran olmalıdır.
+
+Vehicles (Liderlik Tablosu): Uygulamadaki popüler araçların etkileşim (Snap puanı) baz alınarak sıralandığı ayrı bir ekran. Sıralama numarası, fotoğraf, plaka ve kullanıcı takma adı gösterilmelidir.
+
+C. Topluluk ve Etkinlikler
+Sohbet Kanalları:
+
+Global Chat: Tüm kullanıcıların genel sohbeti.
+
+Yerel Sohbet (Local Chat): Konum izni ile otomatik erişilen, aynı şehirdeki kullanıcılara özel oda.
+
+Ekipler (Crews): Kullanıcıların özel, kapalı veya herkese açık gruplar oluşturup yönetebildiği sohbet odaları.
+
+Etkinlik Sohbetleri: Bir etkinliğe "Katıl" butonuyla kayıt olanlar için otomatik açılan, sadece o etkinliğe özel sohbet odası.
+
+Etkinlikler (EVENTS): Etkinlikler, liste görünümüne ek olarak Harita üzerinde konumlarına göre işaretli olarak gösterilmelidir. Etkinlik oluşturma formu, tüm detayları (Ad, Konum, Tarih/Saat, Katılımcı Limiti, Tür) net bir şekilde istemelidir.
+
+III. VIP ÜYELİK SİSTEMİ VE AYRICALIKLAR
+Uygulamanın gelir modeli olarak, abonelik tabanlı, tam işlevli bir VIP sistemi entegre edilmelidir.
+
+VIP Rozeti: VIP üyelerin kullanıcı adı yanında parlak, kalıcı bir VIP rozeti/ikonu (sohbetler, Moments akışı, katılımcı listeleri dahil her yerde) görünür olmalıdır.
+
+Özel Plaka Stilleri: Standart 3D plaka görünümüne ek olarak, sadece VIP üyelerin kullanabileceği Karbon Fiber, Krom Kaplama veya özel renkli arka planlara sahip lüks 3D plaka stilleri açılmalıdır.
+
+Garaj Avantajı: Standart kullanıcı limitine karşın, VIP üyelere sınırsız (veya belirgin ölçüde yüksek bir sayı) araç ekleme hakkı verilmelidir.
+
+Moments'da Öne Çıkma: VIP üyelerin paylaştığı "Moments"lar, Trending (Trend) bölümünde diğer paylaşımlara göre belirli bir algoritmik avantajla daha üst sıralarda gösterilmelidir.
+
+Ek Hizmetler: Uygulama içi tüm reklamlar kaldırılmalı ve VIP üyeler için öncelikli destek hizmeti sunulmalıdır.
+
+Özel Etkinlik Odaları: Sadece VIP üyelerin katılabileceği özel, kilitli sanal sohbet/etkinlik odaları oluşturulabilmelidir.
+
+IV. TEKNİK GEREKSİNİMLER
+Geliştirme Ortamı: iOS ve Android platformları için yüksek performanslı, mobil platformlar arası bir teknoloji (Flutter veya React Native) seçilmelidir.
+
+Backend ve İletişim: Güçlü ve ölçeklenebilir bir veritabanı (PostgreSQL/MongoDB) kullanılmalı; sohbet ve anlık bildirimler için WebSocket veya eşdeğer gerçek zamanlı teknolojiler zorunludur.
+
+Plaka Render Teknolojisi: Kullanıcının girdiği metni 3D görselleştirmeye dönüştürecek özel bir kütüphane veya API entegrasyonu şarttır.
+
+Performans: Özellikle Harita (POI'ler ve kullanıcı konumları) ve Fotoğraf/Video yükleme/akış hızları optimize edilmeli ve akıcı olmalıdır.
+
+Güvenlik: Tüm kullanıcı ve araç verileri şifrelenmeli ve yüksek güvenlik standartlarında korunmalıdır.
+
